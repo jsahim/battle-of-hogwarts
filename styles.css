@@ -1,0 +1,94 @@
+* {
+  font-family: 'Wizard World', sans-serif;
+  color: white;
+}
+
+body {
+  display: flex;
+  margin: 0px;
+  height: 100vh;
+}
+
+
+main {
+  background-image: url(https://user-images.githubusercontent.com/107663888/211927188-291e8420-7e18-4e72-9810-7e6dccbe7987.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+aside {
+  background-image: url(https://user-images.githubusercontent.com/107663888/211927945-b4b54183-da14-4eff-b943-9eeedcaf26f7.png);
+  /* background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; */
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.game-header,
+.human-header,
+.computer-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-header {
+  height: 20%;
+}
+
+.game-header > h1 { 
+  margin: 0px;
+}
+
+section { 
+  height: 80%;
+  width: 100%;
+}
+
+.choose-game-screen{
+  border: 1px solid red;
+}
+
+.choose-fighter-screen{
+  border: 1px solid blue;
+  
+}
+.result-display-screen {
+  border: 1px solid green;
+  
+}
+
+.game-type-container {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.game-box{
+  background-color: blueviolet;
+  width: 20vw;
+  text-align: center;
+  padding: 2%;
+}
+
+ul{
+  list-style: none;
+  margin-left: -40px;
+}
+
+.hidden{
+  display: none;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.cdnfonts.com/css/wizard-world" rel="stylesheet">
+</head>
+<body>
+  <aside class="human-player-column">
+    <header class="human-header">
+      <p class="human-image">👨‍🎤</p>
+      <h1 class="human-title">Human</h1>
+      <p class="human-wins">Wins: 0</p>
+      <button>Change Game?</button>
+    </header>
+  </aside>
+  <main class="game-column">
+    <header class="game-header">
+      <h1>Rock, Paper, Scissors</h1>
+      <p>Choose your game!</p>
+    </header>
+    <section class="choose-game-screen">
+      <div class="game-type-container">
+        <div class ="classic-game-box game-box">
+          <h3>CLASSIC</h3>
+          <ul>
+            <li>rock > scissors</li>
+            <li>paper > rock</li>
+            <li>scissors > paper</li>
+          </ul>
+        </div>
+        <div class ="difficult-game-box game-box">
+          <h3>DIFFICULT</h3>
+          <ul>
+            <li>rock > scissors & lizard</li>
+            <li>paper > rock & spock</li>
+            <li>scissors > paper & lizard</li>
+            <li>lizard > paper & spock</li>
+            <li>spock > scissors & rock</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="choose-fighter-screen hidden"></section>
+    <section class="result-display-screen hidden"></section>
+  </main>
+  <aside class="computer-player-column">
+    <header class="computer-header">
+      <p class="computer-image">💻</p>
+      <h1 class="computer-title">Computer</h1>
+      <p class="computer-wins">Wins: 0</p>
+    </header>
+  </aside>
+</body>
+</html> 
