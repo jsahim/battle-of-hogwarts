@@ -13,8 +13,6 @@ body {
 
 main {
   background-image: url('images/main-background.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
   width: 70%;
   display: flex;
@@ -60,7 +58,7 @@ main > header > h1 > span{
 }
 
 .game-header {
-  height: 20%;
+  height: 25%;
 }
 
 .game-header > h1 { 
@@ -70,7 +68,7 @@ main > header > h1 > span{
 }
 
 section { 
-  height: 80%;
+  height: 75%;
   width: 100%;
 }
 
@@ -78,13 +76,16 @@ section {
   border: 1px solid red;
 }
 
-.choose-fighter-screen{
-  border: 1px solid blue;
-  
+.classic-fighter-screen{
+  border: 1px solid yellow;
 }
+
+.difficult-fighter-screen{
+  border: 1px solid blue;
+}
+
 .result-display-screen {
   border: 1px solid green;
-  
 }
 
 .game-type-container {
@@ -110,12 +111,28 @@ li {
   margin-left: -40px;
 }
 
-
-.hidden{
-  display: none;
-}
-
 aside > header > img{
   padding-top: 20%;
   width: 50%;
+}
+
+.spell-icons{
+  padding: 2%;
+  width: 25%;
+  height: auto;
+}
+
+.spell-icons:hover{
+  border: 5px solid green;
+}
+
+.choose-fighter {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hidden{
+  display: none;
 }
