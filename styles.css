@@ -62,7 +62,7 @@ main > header > h1 > span{
 }
 
 .game-header > h1 { 
-  margin: 0px;
+  margin: 5px;
   font-size: 80px;
   color: gold;
 }
@@ -72,17 +72,6 @@ section {
   width: 100%;
 }
 
-.choose-game-screen{
-  border: 1px solid red;
-}
-
-.classic-fighter-screen{
-  border: 1px solid yellow;
-}
-
-.difficult-fighter-screen{
-  border: 1px solid blue;
-}
 
 .result-display-screen {
   border: 1px solid green;
@@ -122,11 +111,8 @@ aside > header > img{
   height: auto;
 }
 
-.spell-icons:hover{
-  border: 5px solid green;
-}
-
-.choose-fighter {
+.choose-fighter,
+.result-display-screen {
   height: inherit;
   display: flex;
   justify-content: center;
