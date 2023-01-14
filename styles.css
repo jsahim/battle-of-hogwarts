@@ -10,7 +10,6 @@ body {
   height: 100vh;
 }
 
-
 main {
   background-image: url('images/main-background.png');
   background-position: center;
@@ -90,7 +89,7 @@ section {
   border: 2px solid gold;
   width: 20vw;
   text-align: center;
-  padding: 2%;
+  padding: 1%;
 }
 
 li {
