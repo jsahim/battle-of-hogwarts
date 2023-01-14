@@ -12,16 +12,32 @@ var gameSelectionScreen = document.getElementById("chooseGameScreen")
 var classicFighterScreen = document.getElementById("classicFighterScreen")
 var difficultFighterScreen = document.getElementById("difficultFighterScreen")
 var winResultsScreen = document.getElementById("winResultsScreen")
+var humanScore = document.getElementById("humanScore")
+var computerScore = document.getElementById("computerScore")
 
 //EVENT LISTENERS
 window.addEventListener("load", setGameComponents)
 classicBox.addEventListener("click", showChooseFighterScreen)
 difficultBox.addEventListener("click", showChooseFighterScreen)
+difficultBox.addEventListener("click", showChooseFighterScreen)
+spellIcons.forEach(
+  event => event.addEventListener('click', captureSpellDetails)
+)
 
 function setGameComponents(){
   humanInstance = new Player("Harry")
   computerInstance = new Player("Voldemort")
   currentGame = new Game (humanInstance, computerInstance)
+}
+
+function captureSpellDetails(event){
+  var chosenSpell = event.target.id
+  humanInstance.takeTurn(event, chosenSpell)
+}
+
+
+function displayResults(winner){
+  console.log(`${winner} IS THE WINNER CHICKEN DINNER`);
 }
 
 function showGameSelectionScreen(){
