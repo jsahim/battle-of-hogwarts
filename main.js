@@ -15,6 +15,8 @@ var winResultsScreen = document.getElementById("winResultsScreen")
 
 //EVENT LISTENERS
 window.addEventListener("load", setGameComponents)
+classicBox.addEventListener("click", showChooseFighterScreen)
+difficultBox.addEventListener("click", showChooseFighterScreen)
 
 function setGameComponents(){
   humanInstance = new Player("Harry")
@@ -22,11 +24,32 @@ function setGameComponents(){
   currentGame = new Game (humanInstance, computerInstance)
 }
 
-// function showGameSelectionScreen(){
-// }
+function showGameSelectionScreen(){
+  gameSelectionScreen.classList.remove('hidden')
+  classicFighterScreen.classList.add('hidden')
+  difficultFighterScreen.classList.add('hidden')
+  winResultsScreen.classList.add('hidden')
+}
 
-// function showChooseFighterScreen(){
-// }
+function showChooseFighterScreen(event){
+  if(event.target.parentNode.id === "classicGameBox"){
+    currentGame.type = "classic"
+    gameSelectionScreen.classList.add('hidden')
+    classicFighterScreen.classList.remove('hidden')
+    difficultFighterScreen.classList.add('hidden')
+    winResultsScreen.classList.add('hidden')
+  } else {
+    currentGame.type = "difficult"
+    gameSelectionScreen.classList.add('hidden')
+    classicFighterScreen.classList.add('hidden')
+    difficultFighterScreen.classList.remove('hidden')
+    winResultsScreen.classList.add('hidden')
+  }
+}
 
-// function showWinnerScreen(){
-// }
+function showWinnerScreen(){
+  gameSelectionScreen.classList.add('hidden')
+  classicFighterScreen.classList.add('hidden')
+  difficultFighterScreen.classList.add('hidden')
+  winResultsScreen.classList.remove('hidden')
+}
