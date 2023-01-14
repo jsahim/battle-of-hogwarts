@@ -8,11 +8,11 @@ class Player {
     var userChoice
     var compChoice
     if (currentGame.type === "classic"){
-      userChoice = "bombarda"
+      userChoice = event.target.id
       compChoice = spellsArray[Math.floor(Math.random() * 3)]
       console.log(userChoice, compChoice)
     } else if (currentGame.type === "difficult") {
-      userChoice = "bombarda"
+      userChoice = event.target.id
       compChoice = spellsArray[Math.floor(Math.random() * spellsArray.length)]
       console.log(userChoice, compChoice)
     }

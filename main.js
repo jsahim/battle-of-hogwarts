@@ -1,7 +1,22 @@
+// GLOBAL VARIABLES
 var humanObject 
 var computerObject 
 var currentGame
 
+// QUERY SELECTORS
+var spellIcons = document.querySelectorAll(".spell-icons")
+var classicBox = document.getElementById("classicGameBox")
+var difficultBox = document.getElementById("difficultGameBox")
+var changeGameButton = document.getElementById("gameButton")
 
-//instantiate currentComputerDetails, currentGame, currentPlayerTurn on load
-//when selection of game is created then reassign property of game.type
+//EVENT LISTENERS
+
+
+// function showGameSelectionScreen(){
+// }
+
+// function showChooseFighterScreen(){
+// }
+
+// function showWinnerScreen(){
+// }

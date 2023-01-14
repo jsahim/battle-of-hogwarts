@@ -13,7 +13,7 @@
       <img src="images/harry-icon.png" alt="Harry Potter">
       <h1 class="human-title">Harry</h1>
       <p class="human-wins">Wins:<span class="human-score">0</span></p>
-      <button>Change Game?</button>
+      <button class="hidden" id="gameButton">Change Game?</button>
     </header>
   </aside>
   <main class="game-column">
@@ -23,7 +23,7 @@
     </header>
     <section class="choose-game-screen hidden">
       <div class="game-type-container">
-        <div class ="classic-game-box game-box">
+        <div class="classic-game-box game-box" id="classicGameBox">
           <h2>CLASSIC</h2>
           <ul>
             <li>Bombarda > Diffindo</li><br>
@@ -31,7 +31,7 @@
             <li>Diffindo > Ebublio</li>
           </ul>
         </div>
-        <div class ="difficult-game-box game-box">
+        <div class="difficult-game-box game-box" id="difficultGameBox">
           <h2>DIFFICULT</h2>
           <ul>
             <li>Bombarda > Diffindo & Serpensortia</li><br>
