@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock, Paper, Scissors</title>
+  <title>Battle of Hogwarts</title>
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.cdnfonts.com/css/wizard-world" rel="stylesheet">
 </head>
@@ -23,22 +23,22 @@
     </header>
     <section class="choose-game-screen" id="chooseGameScreen">
       <div class="game-type-container">
-        <div class="classic-game-box game-box" id="classicGameBox">
-          <h2>CLASSIC</h2>
-          <ul>
-            <li>Bombarda > Diffindo</li><br>
-            <li>Ebublio > Bombarda</li><br>
-            <li>Diffindo > Ebublio</li>
+        <div class="classic-game-box game-box" id="classicGameBox" data-parent="classic">
+          <h2 data-parent="classic">CLASSIC</h2>
+          <ul data-parent="classic">
+            <li data-parent="classic">Bombarda > Diffindo</li><br>
+            <li data-parent="classic">Ebublio > Bombarda</li><br>
+            <li data-parent="classic">Diffindo > Ebublio</li>
           </ul>
         </div>
-        <div class="difficult-game-box game-box" id="difficultGameBox">
-          <h2>DIFFICULT</h2>
-          <ul>
-            <li>Bombarda > Diffindo & Serpensortia</li><br>
-            <li>Ebublio > Bombarda & Expelliarmus</li><br>
-            <li>Diffindo > Ebublio & Serpensortia</li><br>
-            <li>Serpensortia > Ebublio & Expelliarmus</li><br>
-            <li>Expelliarmus > Diffindo & Bombarda</li>
+        <div class="difficult-game-box game-box" id="difficultGameBox" data-parent="difficult">
+          <h2 data-parent="difficult">DIFFICULT</h2>
+          <ul data-parent="difficult">
+            <li data-parent="difficult">Bombarda > Diffindo & Serpensortia</li><br>
+            <li data-parent="difficult">Ebublio > Bombarda & Expelliarmus</li><br>
+            <li data-parent="difficult">Diffindo > Ebublio & Serpensortia</li><br>
+            <li data-parent="difficult">Serpensortia > Ebublio & Expelliarmus</li><br>
+            <li data-parent="difficult">Expelliarmus > Diffindo & Bombarda</li>
           </ul>
         </div>
       </div>
