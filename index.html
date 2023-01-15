@@ -12,18 +12,18 @@
     <header class="human-header">
       <img src="images/harry-icon.png" alt="Harry Potter">
       <h1 class="human-title">Harry</h1>
-      <p class="human-wins">Wins:<span class="human-score">0</span></p>
-      <button>Change Game?</button>
+      <p class="human-wins">Wins:<span class="human-score" id="humanScore">0</span></p>
+      <button class="hidden" id="gameButton">Change Game?</button>
     </header>
   </aside>
   <main class="game-column">
     <header class="game-header">
       <h1>Battle<span> of </span>Hogwarts</h1>
-      <p>Choose your game!</p>
+      <p id="subHeading">Choose your game!</p>
     </header>
-    <section class="choose-game-screen hidden">
+    <section class="choose-game-screen" id="chooseGameScreen">
       <div class="game-type-container">
-        <div class ="classic-game-box game-box">
+        <div class="classic-game-box game-box" id="classicGameBox">
           <h2>CLASSIC</h2>
           <ul>
             <li>Bombarda > Diffindo</li><br>
@@ -31,7 +31,7 @@
             <li>Diffindo > Ebublio</li>
           </ul>
         </div>
-        <div class ="difficult-game-box game-box">
+        <div class="difficult-game-box game-box" id="difficultGameBox">
           <h2>DIFFICULT</h2>
           <ul>
             <li>Bombarda > Diffindo & Serpensortia</li><br>
@@ -43,25 +43,25 @@
         </div>
       </div>
     </section>
-    <section class="classic-fighter-screen choose-fighter">
-      <img class="spell-icons" id="bombarda" src="images/bombarda.png" alt="Bombarda">
-      <img class="spell-icons" id="ebublio" src="images/ebublio.png" alt="Ebublio">
-      <img class="spell-icons" id="diffindo" src="images/diffindo.png" alt="Diffindo">
+    <section class="classic-fighter-screen choose-fighter hidden" id="classicFighterScreen">
+      <img class="spell-icons" id="bombarda" src="images/bombarda.png" alt="bombarda">
+      <img class="spell-icons" id="ebublio" src="images/ebublio.png" alt="ebublio">
+      <img class="spell-icons" id="diffindo" src="images/diffindo.png" alt="diffindo">
     </section>
-    <section class="difficult-fighter-screen choose-fighter hidden">
-      <img class="spell-icons" id="bombarda" src="images/bombarda.png" alt="Bombarda">
-      <img class="spell-icons" id="ebublio" src="images/ebublio.png" alt="Ebublio">
-      <img class="spell-icons" id="diffindo" src="images/diffindo.png" alt="Diffindo">
-      <img class="spell-icons" id="serpensortia" src="images/serpensortia.png" alt="Serpensortia">
-      <img class="spell-icons" id="expelliarmus" src="images/expelliarmus.png" alt="Expelliarmus">
+    <section class="difficult-fighter-screen choose-fighter hidden" id="difficultFighterScreen">
+      <img class="spell-icons" id="bombarda" src="images/bombarda.png" alt="bombarda">
+      <img class="spell-icons" id="ebublio" src="images/ebublio.png" alt="ebublio">
+      <img class="spell-icons" id="diffindo" src="images/diffindo.png" alt="diffindo">
+      <img class="spell-icons" id="serpensortia" src="images/serpensortia.png" alt="serpensortia">
+      <img class="spell-icons" id="expelliarmus" src="images/expelliarmus.png" alt="expelliarmus">
     </section>
-    <section class="result-display-screen hidden"></section>
+    <section class="result-display-screen hidden" id="winResultsScreen"></section>
   </main>
   <aside class="computer-player-column">
     <header class="computer-header">
       <img src="images/voldemort-icon.png" alt="Voldemort">
       <h1 class="computer-title">Voldemort</h1>
-      <p class="computer-wins">Wins:<span class="computer-score">0</span></p>
+      <p class="computer-wins">Wins:<span class="computer-score" id="computerScore">0</span></p>
     </header>
   </aside>
   <script src="main.js"></script>
