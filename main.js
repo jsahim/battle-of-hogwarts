@@ -4,6 +4,7 @@ var computerInstance
 var currentGame
 
 // QUERY SELECTORS
+var subHeading = document.getElementById("subHeading")
 var spellIcons = document.querySelectorAll(".spell-icons")
 var classicBox = document.getElementById("classicGameBox")
 var difficultBox = document.getElementById("difficultGameBox")
@@ -21,23 +22,30 @@ classicBox.addEventListener("click", showChooseFighterScreen)
 difficultBox.addEventListener("click", showChooseFighterScreen)
 difficultBox.addEventListener("click", showChooseFighterScreen)
 spellIcons.forEach(
-  event => event.addEventListener('click', captureSpellDetails)
+  event => event.addEventListener("click", selectSpell)
 )
 
 function setGameComponents(){
-  humanInstance = new Player("Harry")
-  computerInstance = new Player("Voldemort")
+  humanInstance = new Player("Harry", "⚡️")
+  computerInstance = new Player("Voldemort", "💀")
   currentGame = new Game (humanInstance, computerInstance)
 }
 
-function captureSpellDetails(event){
+function selectSpell(event){
   var chosenSpell = event.target.id
   humanInstance.takeTurn(event, chosenSpell)
 }
 
 
-function displayResults(winner){
-  console.log(`${winner} IS THE WINNER CHICKEN DINNER`);
+function displayResults(winner, userSpell, compSpell){
+  winResultsScreen.innerHTML = " "
+  humanScore.innerText = humanInstance.wins
+  computerScore.innerText = computerInstance.wins
+  subHeading.innerText = `${winner.token} ${winner.name} ${winner.token} won this battle!`
+  winResultsScreen.innerHTML =       
+  `<img class="spell-icons" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
+  <img class="spell-icons" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
+  showWinnerScreen()
 }
 
 function showGameSelectionScreen(){
@@ -48,6 +56,7 @@ function showGameSelectionScreen(){
 }
 
 function showChooseFighterScreen(event){
+  subHeading.innerText = "Choose your spell!"
   if(event.target.parentNode.id === "classicGameBox"){
     currentGame.type = "classic"
     gameSelectionScreen.classList.add('hidden')

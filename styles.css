@@ -71,10 +71,6 @@ section {
   width: 100%;
 }
 
-.result-display-screen {
-  border: 1px solid green;
-}
-
 .game-type-container {
   height: inherit;
   display: flex;

@@ -1,6 +1,7 @@
 class Player {
-  constructor(playerName){
+  constructor(playerName, playerIcon){
     this.name = playerName
+    this.token = playerIcon
     this.wins = 0
   }
   takeTurn(event, userSpell) {
