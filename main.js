@@ -20,7 +20,7 @@ var computerScore = document.getElementById("computerScore")
 window.addEventListener("load", setGameComponents)
 classicBox.addEventListener("click", showChooseFighterScreen)
 difficultBox.addEventListener("click", showChooseFighterScreen)
-difficultBox.addEventListener("click", showChooseFighterScreen)
+changeGameButton.addEventListener("click", showGameSelectionScreen)
 spellIcons.forEach(
   event => event.addEventListener("click", selectSpell)
 )
@@ -37,20 +37,20 @@ function selectSpell(event){
 }
 
 
-function displayResults(winner, userSpell, compSpell){
+function displayResults(winnerInstance, userSpell, compSpell){
   winResultsScreen.innerHTML = " "
   humanScore.innerText = humanInstance.wins
   computerScore.innerText = computerInstance.wins
-  console.log(winner)
   winResultsScreen.innerHTML =       
   `<img class="spell-icons" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
   <img class="spell-icons" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
-  if(winner === undefined){
-    subHeading.innerText = "💥Priori Incantatem💥 It's a draw!"
+  if(winnerInstance === undefined){
+    subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
   } else {
-    subHeading.innerText = `${winner.token} ${winner.name} ${winner.token} won this battle!`
+    subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle!`
   }
   showWinnerScreen()
+  setTimeout(assessGameType, 2000)
 }
 
 function showGameSelectionScreen(){
@@ -58,12 +58,17 @@ function showGameSelectionScreen(){
   classicFighterScreen.classList.add('hidden')
   difficultFighterScreen.classList.add('hidden')
   winResultsScreen.classList.add('hidden')
+  changeGameButton.classList.add('hidden')
+}
+
+function assessGameType(){
+  changeGameButton.classList.remove('hidden')
+  showChooseFighterScreen()
 }
 
 function showChooseFighterScreen(event){
-  subHeading.innerText = "Choose your spell!"
-  if(event.target.parentNode.id === "classicGameBox"){
-    currentGame.type = "classic"
+  subHeading.innerText = "Choose Your Spell!"
+  if(currentGame.type === "classic" || (event.target.parentNode.id === "classicGameBox" && currentGame.roundsCompleted === 0)){
     gameSelectionScreen.classList.add('hidden')
     classicFighterScreen.classList.remove('hidden')
     difficultFighterScreen.classList.add('hidden')
@@ -82,4 +87,5 @@ function showWinnerScreen(){
   classicFighterScreen.classList.add('hidden')
   difficultFighterScreen.classList.add('hidden')
   winResultsScreen.classList.remove('hidden')
+  changeGameButton.classList.add('hidden')
 }
