@@ -33,12 +33,22 @@ aside {
 .human-score,
 .computer-title, 
 .computer-wins,
-.computer-score,
-button  {
+.computer-score {
   color: maroon;
 }
 
-main > header > p{
+button {
+  margin-top: 25%;
+  background-color: maroon;
+  font-size: large;
+  border: 5px solid maroon;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+main > header > p {
   margin: 0px;
   font-size: 30px;
 }
@@ -56,18 +66,20 @@ main > header > h1 > span{
   justify-content: center;
 }
 
-.game-header {
-  height: 25%;
+.game-header { 
+  height: 20%;
+  display: flex; 
+  justify-content: flex-start;
 }
 
 .game-header > h1 { 
-  margin: 5px;
+  margin: 0px;
   font-size: 80px;
   color: gold;
 }
 
 section { 
-  height: 75%;
+  height: 80%;
   width: 100%;
 }
 
@@ -77,7 +89,6 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .game-box{
@@ -86,6 +97,13 @@ section {
   width: 20vw;
   text-align: center;
   padding: 1%;
+  transition: 0.2s;
+}
+
+.game-box:hover{
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 5px 100px rgba(225, 225, 225, .9);
 }
 
 li {
@@ -99,20 +117,37 @@ aside > header > img{
   width: 50%;
 }
 
-.spell-icons{
-  padding: 2%;
-  width: 25%;
-  height: auto;
+aside > header > p{
+  margin: 1px;
+  font-size: 20px;
 }
 
+.spell-icons{
+  padding: 1%;
+  width: 25%;
+  height: auto;
+  transition: 0.2s;
+}
+
+.spell-icons:hover{
+  cursor: pointer;
+  box-shadow: 0 5px 100px rgba(225, 225, 225, .9);
+}
 .choose-fighter,
 .result-display-screen {
   height: inherit;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
+
+
+
 .hidden{
   display: none;
+}
+
+.disabled {
+  pointer-events: none;
 }

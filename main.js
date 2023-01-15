@@ -90,12 +90,13 @@ function assessButtonUse(){
 }
 
 function displayResults(winnerInstance, userSpell, compSpell){
+  setTimeout(displayWandCursor, 4000)
   winResultsScreen.innerHTML = " "
-  humanScore.innerText = humanInstance.wins
-  computerScore.innerText = computerInstance.wins
+  humanScore.innerText = " " + humanInstance.wins
+  computerScore.innerText = " " + computerInstance.wins
   winResultsScreen.innerHTML =       
-  `<img class="spell-icons" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
-  <img class="spell-icons" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
+  `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
+  <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
   if(winnerInstance === undefined){
     subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
   } else {
@@ -105,3 +106,6 @@ function displayResults(winnerInstance, userSpell, compSpell){
   setTimeout(showChooseFighterScreen, 2000)
 }
 
+function displayWandCursor () {
+  subHeading.innerText = "HOLDING"
+}
