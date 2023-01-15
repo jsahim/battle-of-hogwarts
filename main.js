@@ -41,10 +41,15 @@ function displayResults(winner, userSpell, compSpell){
   winResultsScreen.innerHTML = " "
   humanScore.innerText = humanInstance.wins
   computerScore.innerText = computerInstance.wins
-  subHeading.innerText = `${winner.token} ${winner.name} ${winner.token} won this battle!`
+  console.log(winner)
   winResultsScreen.innerHTML =       
   `<img class="spell-icons" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
   <img class="spell-icons" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
+  if(winner === undefined){
+    subHeading.innerText = "💥Priori Incantatem💥 It's a draw!"
+  } else {
+    subHeading.innerText = `${winner.token} ${winner.name} ${winner.token} won this battle!`
+  }
   showWinnerScreen()
 }
 

@@ -7,7 +7,7 @@ class Game {
   findWinner(userSelect, compSelect) {
     var winner
     if (compSelect === userSelect) {
-      winner = "It's a DRAW!"
+      winner = undefined
     } else if (userSelect === "bombarda" && (compSelect === "diffindo" || compSelect === "serpensortia")) {
       this.human.wins++
       winner = this.human
