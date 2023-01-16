@@ -4,7 +4,6 @@ var computerInstance
 var currentGame
 
 // QUERY SELECTORS
-var body = document.querySelector("body")
 var subHeading = document.getElementById("subHeading")
 var spellIcons = document.querySelectorAll(".spell-icons")
 var classicBox = document.getElementById("classicGameBox")
@@ -14,6 +13,7 @@ var gameSelectionScreen = document.getElementById("chooseGameScreen")
 var classicFighterScreen = document.getElementById("classicFighterScreen")
 var difficultFighterScreen = document.getElementById("difficultFighterScreen")
 var winResultsScreen = document.getElementById("winResultsScreen")
+var wandDisplayScreen = document.getElementById("wandScreen")
 var humanScore = document.getElementById("humanScore")
 var computerScore = document.getElementById("computerScore")
 
@@ -37,6 +37,7 @@ function showGameSelectionScreen(){
   difficultFighterScreen.classList.add('hidden')
   winResultsScreen.classList.add('hidden')
   changeGameButton.classList.add('hidden')
+  wandDisplayScreen.classList.add('hidden')
 }
 
 function showChooseFighterScreen(){
@@ -46,18 +47,28 @@ function showChooseFighterScreen(){
     classicFighterScreen.classList.remove('hidden')
     difficultFighterScreen.classList.add('hidden')
     winResultsScreen.classList.add('hidden')
+    wandDisplayScreen.classList.add('hidden')
     assessButtonUse()
   } else {
     gameSelectionScreen.classList.add('hidden')
     classicFighterScreen.classList.add('hidden')
     difficultFighterScreen.classList.remove('hidden')
     winResultsScreen.classList.add('hidden')
+    wandDisplayScreen.classList.add('hidden')
     assessButtonUse()
   }
 }
 
+function showWinnerScreen(){
+  gameSelectionScreen.classList.add('hidden')
+  classicFighterScreen.classList.add('hidden')
+  difficultFighterScreen.classList.add('hidden')
+  winResultsScreen.classList.remove('hidden')
+  changeGameButton.classList.add('hidden')
+  wandDisplayScreen.classList.add('hidden')
+}
 
-//FUNCTIONS FOR GAME PLAY
+//FUNCTIONS
 
 function setGameComponents(){
   humanInstance = new Player("Harry", "⚡️")
@@ -75,7 +86,6 @@ function selectSpell(event){
   humanInstance.takeTurn(event, chosenSpell)
 }
 
-
 function assessButtonUse(){
   if(currentGame.roundsCompleted === 0){
     changeGameButton.classList.add('hidden')
@@ -84,8 +94,18 @@ function assessButtonUse(){
   }
 }
 
+function wandTransition(){
+  document.body.style.cursor = "none"
+  gameSelectionScreen.classList.add('hidden')
+  classicFighterScreen.classList.add('hidden')
+  difficultFighterScreen.classList.add('hidden')
+  winResultsScreen.classList.add('hidden')
+  changeGameButton.classList.add('hidden')
+  wandDisplayScreen.classList.remove('hidden')
+}
+
 function updateDisplayResults(winnerInstance, userSpell, compSpell){
-  body.style.cursor = url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="64" width="64"><text y="28" font-size="32">👻</text><path d="M0,2 L0,0 L2,0" fill="red" /></svg>'), auto;
+  document.body.style.cursor = "auto"
   winResultsScreen.innerHTML = " "
   humanScore.innerText = humanInstance.wins
   computerScore.innerText = computerInstance.wins
@@ -97,11 +117,7 @@ function updateDisplayResults(winnerInstance, userSpell, compSpell){
   } else {
     subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle!`
   }
-  gameSelectionScreen.classList.add('hidden')
-  classicFighterScreen.classList.add('hidden')
-  difficultFighterScreen.classList.add('hidden')
-  winResultsScreen.classList.remove('hidden')
-  changeGameButton.classList.add('hidden')
+  showWinnerScreen()
   setTimeout(showChooseFighterScreen, 2000)
 }
 
