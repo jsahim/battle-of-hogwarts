@@ -13,6 +13,7 @@
 }
 
 body {
+  cursor: auto;
   display: flex;
   margin: 0px;
   height: 100vh;
@@ -43,6 +44,22 @@ aside {
 .computer-wins,
 .computer-score {
   color: maroon;
+}
+
+.human-title, 
+.computer-title {
+  font-size: 28px;
+}
+
+.human-wins,
+.computer-wins {
+  margin-bottom: 0%;
+}
+
+.computer-score,
+.human-score {
+  margin: 0%;
+  font-size: 70px;
 }
 
 button {
@@ -157,4 +174,11 @@ aside > header > p{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.wand-display-screen{
+  background-image: url('images/wand.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
