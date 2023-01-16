@@ -4,6 +4,14 @@
   letter-spacing: 2px;
 }
 
+.hidden{
+  display: none !important;
+}
+
+.disabled {
+  pointer-events: none !important;
+}
+
 body {
   display: flex;
   margin: 0px;
@@ -60,6 +68,7 @@ main > header > p {
 
 main > header > h1 > span{
   font-size: 25px;
+  padding: 10px;
 }
 
 .game-header,
@@ -72,12 +81,17 @@ main > header > h1 > span{
 }
 
 .game-header { 
-  height: 20%;
-  display: flex; 
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  height: 20%;
+  padding-top: 40px;
 }
 
 .game-header > h1 { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0px;
   font-size: 80px;
   color: gold;
@@ -123,12 +137,12 @@ aside > header > img{
 }
 
 aside > header > p{
-  margin: 1px;
   font-size: 20px;
 }
 
 .spell-icons{
-  width: auto;
+  margin: 1%;
+  width: 25%;
   height: auto;
   transition: 0.2s;
 }
@@ -143,15 +157,4 @@ aside > header > p{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-}
-
-
-
-
-.hidden{
-  display: none;
-}
-
-.disabled {
-  pointer-events: none;
 }

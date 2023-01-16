@@ -90,7 +90,6 @@ function assessButtonUse(){
 }
 
 function displayResults(winnerInstance, userSpell, compSpell){
-  setTimeout(displayWandCursor, 4000)
   winResultsScreen.innerHTML = " "
   humanScore.innerText = " " + humanInstance.wins
   computerScore.innerText = " " + computerInstance.wins
@@ -106,6 +105,3 @@ function displayResults(winnerInstance, userSpell, compSpell){
   setTimeout(showChooseFighterScreen, 2000)
 }
 
-function displayWandCursor () {
-  subHeading.innerText = "HOLDING"
-}
