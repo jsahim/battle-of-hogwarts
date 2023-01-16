@@ -45,6 +45,22 @@ aside {
   color: maroon;
 }
 
+.human-title, 
+.computer-title {
+  font-size: 28px;
+}
+
+.human-wins,
+.computer-wins {
+  margin-bottom: 0%;
+}
+
+.computer-score,
+.human-score {
+  margin: 0%;
+  font-size: 70px;
+}
+
 button {
   margin-top: 25%;
   background-color: maroon;

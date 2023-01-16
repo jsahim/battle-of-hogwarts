@@ -16,6 +16,7 @@ var winResultsScreen = document.getElementById("winResultsScreen")
 var humanScore = document.getElementById("humanScore")
 var computerScore = document.getElementById("computerScore")
 
+
 //EVENT LISTENERS
 window.addEventListener("load", setGameComponents)
 classicBox.addEventListener("click", assignGameType)
@@ -24,6 +25,7 @@ changeGameButton.addEventListener("click", showGameSelectionScreen)
 spellIcons.forEach(
   event => event.addEventListener("click", selectSpell)
 )
+
 
 //FUNCTIONS FOR SCREEN DISPLAY
 
@@ -81,6 +83,7 @@ function selectSpell(event){
   humanInstance.takeTurn(event, chosenSpell)
 }
 
+
 function assessButtonUse(){
   if(currentGame.roundsCompleted === 0){
     changeGameButton.classList.add('hidden')
@@ -89,7 +92,7 @@ function assessButtonUse(){
   }
 }
 
-function displayResults(winnerInstance, userSpell, compSpell){
+function updateDisplayResults(winnerInstance, userSpell, compSpell){
   winResultsScreen.innerHTML = " "
   humanScore.innerText = " " + humanInstance.wins
   computerScore.innerText = " " + computerInstance.wins
