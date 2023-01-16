@@ -4,6 +4,7 @@ var computerInstance
 var currentGame
 
 // QUERY SELECTORS
+var body = document.querySelector("body")
 var subHeading = document.getElementById("subHeading")
 var spellIcons = document.querySelectorAll(".spell-icons")
 var classicBox = document.getElementById("classicGameBox")
@@ -55,15 +56,6 @@ function showChooseFighterScreen(){
   }
 }
 
-function showWinnerScreen(){
-  gameSelectionScreen.classList.add('hidden')
-  classicFighterScreen.classList.add('hidden')
-  difficultFighterScreen.classList.add('hidden')
-  winResultsScreen.classList.remove('hidden')
-  changeGameButton.classList.add('hidden')
-}
-
-
 
 //FUNCTIONS FOR GAME PLAY
 
@@ -93,9 +85,10 @@ function assessButtonUse(){
 }
 
 function updateDisplayResults(winnerInstance, userSpell, compSpell){
+  body.style.cursor = url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="64" width="64"><text y="28" font-size="32">👻</text><path d="M0,2 L0,0 L2,0" fill="red" /></svg>'), auto;
   winResultsScreen.innerHTML = " "
-  humanScore.innerText = " " + humanInstance.wins
-  computerScore.innerText = " " + computerInstance.wins
+  humanScore.innerText = humanInstance.wins
+  computerScore.innerText = computerInstance.wins
   winResultsScreen.innerHTML =       
   `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
   <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
@@ -104,7 +97,11 @@ function updateDisplayResults(winnerInstance, userSpell, compSpell){
   } else {
     subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle!`
   }
-  showWinnerScreen()
+  gameSelectionScreen.classList.add('hidden')
+  classicFighterScreen.classList.add('hidden')
+  difficultFighterScreen.classList.add('hidden')
+  winResultsScreen.classList.remove('hidden')
+  changeGameButton.classList.add('hidden')
   setTimeout(showChooseFighterScreen, 2000)
 }
 

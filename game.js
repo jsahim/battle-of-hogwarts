@@ -51,7 +51,9 @@ class Game {
       console.log("Computer wins with expelliarmus");
     }
     this.roundsCompleted++
-    updateDisplayResults(this.currentWinner, userSelect, compSelect)
+    setTimeout(function(){
+      updateDisplayResults(this.currentWinner, userSelect, compSelect)
+    }, 1000);
   }
 }
 
