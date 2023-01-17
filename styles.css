@@ -1,6 +1,6 @@
 * {
   font-family: 'Wizard World', sans-serif;
-  color: white;
+  color: maroon;
   letter-spacing: 2px;
 }
 
@@ -38,15 +38,6 @@ aside {
 }
 
 .human-title, 
-.human-wins,
-.human-score,
-.computer-title, 
-.computer-wins,
-.computer-score {
-  color: maroon;
-}
-
-.human-title, 
 .computer-title {
   font-size: 28px;
 }
@@ -63,6 +54,7 @@ aside {
 }
 
 button {
+  color: white;
   margin-top: 25%;
   background-color: maroon;
   font-size: large;
@@ -79,11 +71,13 @@ button:hover {
 }
 
 main > header > p {
+  color: white;
   margin: 0px;
   font-size: 30px;
 }
 
 main > header > h1 > span{
+  color: white;
   font-size: 25px;
   padding: 10px;
 }
@@ -136,6 +130,10 @@ section {
   transition: 0.2s;
 }
 
+.game-box > h2 {
+  color: white;
+}
+
 .game-box:hover{
   cursor: pointer;
   border: 2px solid white;
@@ -166,7 +164,8 @@ aside > header > p{
 
 .spell-icons:hover{
   cursor: pointer;
-  box-shadow: 0 5px 100px rgba(225, 225, 225, .9);
+  -webkit-filter: drop-shadow(0px 0px 30px white);
+  filter: drop-shadow(0px 0px 30px white);
 }
 .choose-fighter,
 .result-display-screen {
@@ -179,6 +178,5 @@ aside > header > p{
 .wand-display-screen{
   background-image: url('images/wand.gif');
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
 }
