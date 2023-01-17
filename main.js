@@ -108,7 +108,7 @@ function selectSpell(event){
   currentGame.findWinner(humanInstance.choice, computerInstance.choice)
 }
 
-function updateDisplayResults(winnerInstance, userSpell, compSpell){
+function updateDisplayResults(winnerObj, userSpell, compSpell){
   document.body.style.cursor = "auto"
   winResultsScreen.innerHTML = " "
   humanScore.innerText = humanInstance.wins
@@ -116,12 +116,10 @@ function updateDisplayResults(winnerInstance, userSpell, compSpell){
   winResultsScreen.innerHTML =       
   `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}-image">
   <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}-image">`
-  if(!winnerInstance){
+  if(!winnerObj){
     subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
-  } else if (winnerInstance.name === "Harry"){
-    subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle with ${userSpell}!`
   } else {
-    subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle with ${compSpell}!`
+    subHeading.innerText = `${winnerObj.icon} ${winnerObj.name} ${winnerObj.icon} won this battle with ${winnerObj.spell}!`
   }
   showWinnerScreen()
   setTimeout(showChooseFighterScreen, 2500)
