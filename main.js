@@ -41,22 +41,20 @@ function showGameSelectionScreen(){
 }
 
 function showChooseFighterScreen(){
+  humanInstance.reset()
+  computerInstance.reset()
   subHeading.innerText = "Choose Your Spell!"
+  gameSelectionScreen.classList.add('hidden')
+  winResultsScreen.classList.add('hidden')
+  wandDisplayScreen.classList.add('hidden')
   if(currentGame.type === "classic"){
-    gameSelectionScreen.classList.add('hidden')
     classicFighterScreen.classList.remove('hidden')
     difficultFighterScreen.classList.add('hidden')
-    winResultsScreen.classList.add('hidden')
-    wandDisplayScreen.classList.add('hidden')
-    assessButtonUse()
   } else {
-    gameSelectionScreen.classList.add('hidden')
     classicFighterScreen.classList.add('hidden')
     difficultFighterScreen.classList.remove('hidden')
-    winResultsScreen.classList.add('hidden')
-    wandDisplayScreen.classList.add('hidden')
-    assessButtonUse()
   }
+  assessButtonUse()
 }
 
 function showWandTransition(){
@@ -78,6 +76,7 @@ function showWinnerScreen(){
   wandDisplayScreen.classList.add('hidden')
 }
 
+
 //FUNCTIONS FOR GAME PLAY
 
 function setGameComponents(){
@@ -92,8 +91,18 @@ function assignGameType(event){
 }
 
 function selectSpell(event){
+  var spellsArray
+  var compChoice
   var chosenSpell = event.target.id
-  humanInstance.takeTurn(event, chosenSpell)
+  if (currentGame.type === "classic"){
+    spellsArray = ["bombarda", "ebublio", "diffindo"]
+  } else if (currentGame.type === "difficult") {
+    spellsArray = ["bombarda", "ebublio", "diffindo", "serpensortia", "expelliarmus"]
+  }
+  compChoice = spellsArray[Math.floor(Math.random() * spellsArray.length)]
+  humanInstance.takeTurn(chosenSpell)
+  computerInstance.takeTurn(compChoice)
+  currentGame.findWinner(humanInstance.choice, computerInstance.choice)
 }
 
 function assessButtonUse(){
@@ -112,7 +121,7 @@ function updateDisplayResults(winnerInstance, userSpell, compSpell){
   winResultsScreen.innerHTML =       
   `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
   <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
-  if(winnerInstance === undefined){
+  if(!winnerInstance){
     subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
   } else if (winnerInstance.name === "Harry"){
     subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle with ${userSpell}!`
