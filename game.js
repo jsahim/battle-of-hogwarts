@@ -36,7 +36,7 @@ class Game {
       console.log("Computer wins with bombarda");
     } else if (compSelect === "ebublio" && (userSelect === "bombarda" || userSelect === "expelliarmus")) {
       this.computer.wins++
-      this.currentWinner = this.computer
+      gameWinner = this.computer
       console.log("Computer wins with ebublio");
     } else if (compSelect === "diffindo" && (userSelect === "ebublio" || userSelect === "serpensortia")) {
       this.computer.wins++

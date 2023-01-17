@@ -105,6 +105,7 @@ function wandTransition(){
 }
 
 function updateDisplayResults(winnerInstance, userSpell, compSpell){
+  console.log(winnerInstance)
   document.body.style.cursor = "auto"
   winResultsScreen.innerHTML = " "
   humanScore.innerText = humanInstance.wins
