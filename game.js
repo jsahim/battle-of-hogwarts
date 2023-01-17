@@ -12,22 +12,22 @@ class Game {
       gameWinner = null
     } else if (userSelect === "bombarda" && (compSelect === "diffindo" || compSelect === "serpensortia")) {
       this.human.wins++
-      gameWinner = this.human
+      gameWinner = { winnerName: this.human.name, winnerIcon: this.human.token, winnerSpell: this.human.choice }
     } else if (userSelect === "ebublio" && (compSelect === "bombarda" || compSelect === "expelliarmus")) {
       this.human.wins++
-      gameWinner = this.human
+      gameWinner = { winnerName: this.human.name, winnerIcon: this.human.token, winnerSpell: this.human.choice }
     } else if (userSelect === "diffindo" && (compSelect === "ebublio" || compSelect === "serpensortia")) {
       this.human.wins++
-      gameWinner = this.human
+      gameWinner = { winnerName: this.human.name, winnerIcon: this.human.token, winnerSpell: this.human.choice }
     } else if (userSelect === "serpensortia" && (compSelect === "ebublio" || compSelect === "expelliarmus")) {
       this.human.wins++
-      gameWinner = this.human
+      gameWinner = { winnerName: this.human.name, winnerIcon: this.human.token, winnerSpell: this.human.choice }
     } else if (userSelect === "expelliarmus" && (compSelect === "diffindo" || compSelect === "bombarda")) {
       this.human.wins++
-      gameWinner = this.human
+      gameWinner = { winnerName: this.human.name, winnerIcon: this.human.token, winnerSpell: this.human.choice }
     } else {
       this.computer.wins++
-      gameWinner = this.computer
+      gameWinner = { winnerName: this.computer.name, winnerIcon: this.computer.token, winnerSpell: this.computer.choice }
     }
     this.roundsCompleted++
     this.currentWinner = gameWinner
