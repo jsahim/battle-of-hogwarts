@@ -12,7 +12,7 @@ class Game {
       gameWinner = undefined
     } else if (userSelect === "bombarda" && (compSelect === "diffindo" || compSelect === "serpensortia")) {
       this.human.wins++
-      gameWinner= this.human
+      gameWinner = this.human
     } else if (userSelect === "ebublio" && (compSelect === "bombarda" || compSelect === "expelliarmus")) {
       this.human.wins++
       gameWinner = this.human

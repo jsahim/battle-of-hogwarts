@@ -164,7 +164,8 @@ aside > header > p{
 
 .spell-icons:hover{
   cursor: pointer;
-  box-shadow: 0 5px 100px rgba(225, 225, 225, .9);
+  -webkit-filter: drop-shadow(0px 0px 30px white);
+  filter: drop-shadow(0px 0px 30px white);
 }
 .choose-fighter,
 .result-display-screen {
