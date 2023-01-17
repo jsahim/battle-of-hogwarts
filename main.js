@@ -114,8 +114,8 @@ function updateDisplayResults(winnerInstance, userSpell, compSpell){
   humanScore.innerText = humanInstance.wins
   computerScore.innerText = computerInstance.wins
   winResultsScreen.innerHTML =       
-  `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
-  <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
+  `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}-image">
+  <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}-image">`
   if(!winnerInstance){
     subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
   } else if (winnerInstance.name === "Harry"){
