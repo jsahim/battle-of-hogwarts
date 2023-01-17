@@ -59,6 +59,16 @@ function showChooseFighterScreen(){
   }
 }
 
+function showWandTransition(){
+  document.body.style.cursor = "none"
+  gameSelectionScreen.classList.add('hidden')
+  classicFighterScreen.classList.add('hidden')
+  difficultFighterScreen.classList.add('hidden')
+  winResultsScreen.classList.add('hidden')
+  changeGameButton.classList.add('hidden')
+  wandDisplayScreen.classList.remove('hidden')
+}
+
 function showWinnerScreen(){
   gameSelectionScreen.classList.add('hidden')
   classicFighterScreen.classList.add('hidden')
@@ -68,7 +78,7 @@ function showWinnerScreen(){
   wandDisplayScreen.classList.add('hidden')
 }
 
-//FUNCTIONS
+//FUNCTIONS FOR GAME PLAY
 
 function setGameComponents(){
   humanInstance = new Player("Harry", "⚡️")
@@ -94,18 +104,7 @@ function assessButtonUse(){
   }
 }
 
-function wandTransition(){
-  document.body.style.cursor = "none"
-  gameSelectionScreen.classList.add('hidden')
-  classicFighterScreen.classList.add('hidden')
-  difficultFighterScreen.classList.add('hidden')
-  winResultsScreen.classList.add('hidden')
-  changeGameButton.classList.add('hidden')
-  wandDisplayScreen.classList.remove('hidden')
-}
-
 function updateDisplayResults(winnerInstance, userSpell, compSpell){
-  console.log(winnerInstance)
   document.body.style.cursor = "auto"
   winResultsScreen.innerHTML = " "
   humanScore.innerText = humanInstance.wins
@@ -115,8 +114,10 @@ function updateDisplayResults(winnerInstance, userSpell, compSpell){
   <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
   if(winnerInstance === undefined){
     subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
+  } else if (winnerInstance.name === "Harry"){
+    subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle with ${userSpell}!`
   } else {
-    subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle!`
+    subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle with ${compSpell}!`
   }
   showWinnerScreen()
   setTimeout(showChooseFighterScreen, 2000)
