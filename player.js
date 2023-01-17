@@ -8,7 +8,7 @@ class Player {
   takeTurn(spell) {
     this.choice = spell
   }
-  reset(){
+  resetChoice(){
     this.choice = null
   }
 }

@@ -23,13 +23,10 @@ window.addEventListener("load", setGameComponents)
 classicBox.addEventListener("click", assignGameType)
 difficultBox.addEventListener("click", assignGameType)
 changeGameButton.addEventListener("click", showGameSelectionScreen)
-spellIcons.forEach(
-  event => event.addEventListener("click", selectSpell)
-)
+spellIcons.forEach(event => event.addEventListener("click", selectSpell))
 
 
 //FUNCTIONS FOR SCREEN DISPLAY
-
 function showGameSelectionScreen(){
   subHeading.innerText = "Choose Your Game!"
   gameSelectionScreen.classList.remove('hidden')
@@ -41,8 +38,8 @@ function showGameSelectionScreen(){
 }
 
 function showChooseFighterScreen(){
-  humanInstance.reset()
-  computerInstance.reset()
+  humanInstance.resetChoice()
+  computerInstance.resetChoice()
   subHeading.innerText = "Choose Your Spell!"
   gameSelectionScreen.classList.add('hidden')
   winResultsScreen.classList.add('hidden')
@@ -76,9 +73,7 @@ function showWinnerScreen(){
   wandDisplayScreen.classList.add('hidden')
 }
 
-
 //FUNCTIONS FOR GAME PLAY
-
 function setGameComponents(){
   humanInstance = new Player("Harry", "⚡️")
   computerInstance = new Player("Voldemort", "💀")
@@ -90,21 +85,6 @@ function assignGameType(event){
   showChooseFighterScreen()
 }
 
-function selectSpell(event){
-  var spellsArray
-  var compChoice
-  var chosenSpell = event.target.id
-  if (currentGame.type === "classic"){
-    spellsArray = ["bombarda", "ebublio", "diffindo"]
-  } else if (currentGame.type === "difficult") {
-    spellsArray = ["bombarda", "ebublio", "diffindo", "serpensortia", "expelliarmus"]
-  }
-  compChoice = spellsArray[Math.floor(Math.random() * spellsArray.length)]
-  humanInstance.takeTurn(chosenSpell)
-  computerInstance.takeTurn(compChoice)
-  currentGame.findWinner(humanInstance.choice, computerInstance.choice)
-}
-
 function assessButtonUse(){
   if(currentGame.roundsCompleted === 0){
     changeGameButton.classList.add('hidden')
@@ -113,14 +93,29 @@ function assessButtonUse(){
   }
 }
 
+function selectSpell(event){
+  var spellsArray
+  var compChoice
+  var humanChoice = event.target.id
+  if (currentGame.type === "classic"){
+    spellsArray = ["bombarda", "ebublio", "diffindo"]
+  } else if (currentGame.type === "difficult") {
+    spellsArray = ["bombarda", "ebublio", "diffindo", "serpensortia", "expelliarmus"]
+  }
+  compChoice = spellsArray[Math.floor(Math.random() * spellsArray.length)]
+  humanInstance.takeTurn(humanChoice)
+  computerInstance.takeTurn(compChoice)
+  currentGame.findWinner(humanInstance.choice, computerInstance.choice)
+}
+
 function updateDisplayResults(winnerInstance, userSpell, compSpell){
   document.body.style.cursor = "auto"
   winResultsScreen.innerHTML = " "
   humanScore.innerText = humanInstance.wins
   computerScore.innerText = computerInstance.wins
   winResultsScreen.innerHTML =       
-  `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}">
-  <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}">`
+  `<img class="spell-icons disabled" id="${userSpell}" src="images/${userSpell}.png" alt="${userSpell}-image">
+  <img class="spell-icons disabled" id="${compSpell}" src="images/${compSpell}.png" alt="${compSpell}-image">`
   if(!winnerInstance){
     subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
   } else if (winnerInstance.name === "Harry"){
@@ -129,6 +124,5 @@ function updateDisplayResults(winnerInstance, userSpell, compSpell){
     subHeading.innerText = `${winnerInstance.token} ${winnerInstance.name} ${winnerInstance.token} won this battle with ${compSpell}!`
   }
   showWinnerScreen()
-  setTimeout(showChooseFighterScreen, 2000)
+  setTimeout(showChooseFighterScreen, 2500)
 }
-

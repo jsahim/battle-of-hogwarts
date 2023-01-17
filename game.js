@@ -32,9 +32,7 @@ class Game {
     this.roundsCompleted++
     this.currentWinner = gameWinner
     showWandTransition()
-    setTimeout(function(){
-      updateDisplayResults(gameWinner, userSelect, compSelect)
-    }, 2000);
+    setTimeout(function(){ updateDisplayResults(gameWinner, userSelect, compSelect) }, 2000);
   }
 }
 
