@@ -119,7 +119,7 @@ function updateDisplayResults(winnerObj, userSpell, compSpell){
   if(!winnerObj){
     subHeading.innerText = "✨Priori Incantatem✨ It's a draw!"
   } else {
-    subHeading.innerText = `${winnerObj.icon} ${winnerObj.name} ${winnerObj.icon} won this battle with ${winnerObj.spell}!`
+    subHeading.innerText = `${winnerObj.winnerIcon} ${winnerObj.winnerName} ${winnerObj.winnerIcon} won this battle with ${winnerObj.winnerSpell}!`
   }
   showWinnerScreen()
   setTimeout(showChooseFighterScreen, 2500)
