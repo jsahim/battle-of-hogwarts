@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors
+# Battle of Hogwarts
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
@@ -9,7 +9,7 @@ I built a website that allows for a user to play a Harry Potter version of Rock,
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 
 1. A user can fork and clone the following repository: https://github.com/jsahim/rock-paper-scissors
-2. Type `rock-paper-scissors` to move into the root directory
+2. Type `battle-of-hogwarts` to move into the root directory
 3. Open the repository in your preferred text editor
 
 ### Preview of App:
